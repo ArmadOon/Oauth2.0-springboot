@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     @GetMapping
     public ResponseEntity<String> hello(){
+        return ResponseEntity.ok("Hello from non-secured endpoint");
+    }
+
+    @GetMapping("secret")
+    public ResponseEntity<String> helloSecret(){
         return ResponseEntity.ok("Hello from secured endpoint");
     }
 }
